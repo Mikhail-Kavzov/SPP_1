@@ -1,0 +1,35 @@
+{
+  "threads": [
+    {
+      "id": 1,
+      "time": 210,
+      "methods": [
+        {
+          "name": "MyMethod",
+          "class": "Foo",
+          "time": 105,
+          "methods": [
+            {
+              "name": "InnerMethod",
+              "class": "Bar",
+              "time": 105,
+              "methods": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "time": 115,
+      "methods": [
+        {
+          "name": "Method",
+          "class": "Program",
+          "time": 115,
+          "methods": null
+        }
+      ]
+    }
+  ]
+}

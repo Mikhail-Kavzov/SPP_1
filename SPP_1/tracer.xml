@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfThread xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <thread ThreadId="1" ThreadTime="210">
+    <methods MethodName="MyMethod" ClassName="Foo" Time="105">
+      <ChildMethods MethodName="InnerMethod" ClassName="Bar" Time="105" />
+    </methods>
+  </thread>
+  <thread ThreadId="9" ThreadTime="115">
+    <methods MethodName="Method" ClassName="Program" Time="115" />
+  </thread>
+</ArrayOfThread>rayOfThread>      <MethodData name="Method" class="Program" time="104" />
+    </MethodDatas>
+  </thread>
+</ArrayOfThread>
