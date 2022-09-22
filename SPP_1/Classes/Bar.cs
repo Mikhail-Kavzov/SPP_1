@@ -14,7 +14,6 @@ namespace Classes
         public void InnerMethod()
         {
             _tracer.StartTrace();
-
             Thread.Sleep(100);
             _tracer.StopTrace();
         }

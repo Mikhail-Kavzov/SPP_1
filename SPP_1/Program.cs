@@ -12,7 +12,7 @@ namespace Program
         {
             var program = new Program();
             var thread = new Thread(program.Method);
-            ITracer tracer = new Tracer(new TraceResult(new ConcurrentDictionary<int, ThreadTrace>()));
+            ITracer tracer = new Tracer(new TraceResult());
 
             var foo = new Foo(tracer);
             foo.MyMethod();
@@ -40,7 +40,7 @@ namespace Program
         {
             var tracer = (Tracer)o;
             tracer.StartTrace();
-            Thread.Sleep(100);
+            Thread.Sleep(100);                
             tracer.StopTrace();
         }
     }

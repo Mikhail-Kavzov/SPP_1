@@ -14,10 +14,21 @@ namespace TracerLibs.Tracer
         [XmlAttribute, JsonPropertyName("class")]
         public string? ClassName { get; set; }
 
-        [XmlAttribute, JsonPropertyName("time")]
-        public long Time { get; set; }
+        private long time;
 
-        [XmlElement, JsonPropertyName("methods")]
+        [XmlAttribute, JsonPropertyName("time")]
+        public long Time
+        {
+            get
+            {
+                if (time == 0)
+                    throw new ArgumentException("Cannot measure time. Call StartTrace method before StopTrace");
+                return time;
+            }
+            set => time=value;
+        }
+
+        [XmlElement("methods"), JsonPropertyName("methods")]
         public List<MethodData>? NestedMethods { get; set; }
 
         [JsonIgnore]
@@ -28,7 +39,6 @@ namespace TracerLibs.Tracer
             MethodName = methodName;
             ClassName = className;
             _stopwatch.Start();
-
         }
         public MethodData() { }
 

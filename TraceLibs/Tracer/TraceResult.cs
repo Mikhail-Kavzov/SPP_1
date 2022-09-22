@@ -5,12 +5,7 @@ namespace TracerLibs.Tracer
 {
     public class TraceResult
     {
-        public ConcurrentDictionary<int, ThreadTrace> ThreadTraces { get; }
-
-        public TraceResult(ConcurrentDictionary<int, ThreadTrace> threadTraces)
-        {
-            ThreadTraces = threadTraces;
-        }
+        public ConcurrentDictionary<int, ThreadTrace> ThreadTraces { get; } = new();
 
         public ThreadTrace GetThreadTrace(int threadId)
         {
