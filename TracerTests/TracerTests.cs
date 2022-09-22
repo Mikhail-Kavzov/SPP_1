@@ -5,7 +5,7 @@ namespace TracerTests
     [TestClass]
     public class TracerTests
     {
-        private ITracer tracer=null!;
+        private ITracer tracer = null!;
 
         [TestInitialize]
         public void Init()
@@ -27,7 +27,7 @@ namespace TracerTests
         {
             tracer.StartTrace();
             tracer.StartTrace();
-            tracer.StopTrace();       
+            tracer.StopTrace();
         }
     }
 }

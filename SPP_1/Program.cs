@@ -40,7 +40,7 @@ namespace Program
         {
             var tracer = (Tracer)o;
             tracer.StartTrace();
-            Thread.Sleep(100);                
+            Thread.Sleep(100);
             tracer.StopTrace();
         }
     }
