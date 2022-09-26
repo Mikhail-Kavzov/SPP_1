@@ -6,13 +6,13 @@ namespace TracerLibs.Tracer
     [XmlType("thread")]
     public class ThreadTrace
     {
-        [XmlAttribute, JsonPropertyName("id")]
+        [XmlAttribute("id"), JsonPropertyName("id")]
         public int ThreadId { get; set; }
 
-        [XmlAttribute, JsonPropertyName("time")]
+        [XmlAttribute("time"), JsonPropertyName("time")]
         public long ThreadTime { get; set; }
 
-        [JsonPropertyName("methods"),XmlElement("methods")]
+        [JsonPropertyName("methods"), XmlElement("methods")]
         public List<MethodData> MethodDatas { get; set; } = new();
 
         public ThreadTrace(int threadId)
@@ -35,7 +35,7 @@ namespace TracerLibs.Tracer
 
             if (methodPos != MethodDatas.Count - 1)
             {
-                int sizeOfNested = MethodDatas.Count - methodPos - 1;            
+                int sizeOfNested = MethodDatas.Count - methodPos - 1;
                 MethodDatas[methodPos].SetNested(MethodDatas.GetRange(methodPos + 1, sizeOfNested));
                 MethodDatas.RemoveRange(methodPos + 1, sizeOfNested);
             }

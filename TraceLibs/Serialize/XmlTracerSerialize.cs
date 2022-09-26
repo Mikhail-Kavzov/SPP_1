@@ -21,7 +21,7 @@ namespace TracerLibs.Serialize
                 }
                 result = stringWriter.ToString();
             }
-            return result;
+            return result.Replace("ArrayOfThread", "root");
         }
     }
 }
