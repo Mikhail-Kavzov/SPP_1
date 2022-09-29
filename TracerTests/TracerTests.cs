@@ -29,5 +29,22 @@ namespace TracerTests
             tracer.StartTrace();
             tracer.StopTrace();
         }
+
+        [TestMethod]
+        public void TestTracerNormalWork()
+        {
+            tracer.StartTrace();
+            Method(tracer);
+            tracer.StopTrace();
+            var result = tracer.GetTraceResult();
+            Assert.IsNotNull(result.ThreadTraces.Keys);
+        }
+
+        public void Method(ITracer tracer)
+        {
+            tracer.StartTrace();
+            Thread.Sleep(100);
+            tracer.StopTrace();
+        }
     }
 }

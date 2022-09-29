@@ -19,6 +19,7 @@ namespace TracerLibs.Tracer
         {
             ThreadId = threadId;
         }
+
         public ThreadTrace() { }
 
         public void Push(string methodName, string className)
